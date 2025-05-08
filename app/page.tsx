@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import ContactForm from '../components/ContactForm'
 
 // Sample data for upcoming events

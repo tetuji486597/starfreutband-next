@@ -5,8 +5,8 @@ import { useForm, ValidationError } from '@formspree/react'
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID as string)
-  const [message, setMessage] = useState('')
-  const [messageColor, setMessageColor] = useState('')
+  const [message] = useState('')
+  const [messageColor] = useState('')
 
   if (state.succeeded) {
     return <p className="text-green-600">Thank you for your message!</p>
