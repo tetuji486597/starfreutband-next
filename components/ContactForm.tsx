@@ -31,7 +31,8 @@ export default function ContactForm() {
           </div>
           <h3>Message Sent!</h3>
           <p>
-            Thank you for reaching out! We'll get back to you within 24 hours.
+            Thank you for reaching out! We&apos;ll get back to you within 24
+            hours.
           </p>
         </div>
       </div>

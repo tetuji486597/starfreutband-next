@@ -11,14 +11,6 @@ const events = [
   { date: "2024-", venue: "Book Us!", location: "Houston" },
 ];
 
-// Instagram content data
-const instagramInfo = {
-  handle: "@starfreutband.htx",
-  url: "https://www.instagram.com/starfreutband.htx/",
-  description:
-    "Follow us for behind-the-scenes content, live updates, and exclusive photos from our performances!",
-};
-
 // YouTube playlists data
 const playlists = [
   {
@@ -199,7 +191,6 @@ export default function Home() {
         <div className="instagram-feed-container">
           <h3>Recent Posts</h3>
           <div className="instagram-widget-wrapper">
-            <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
             <iframe
               src="//lightwidget.com/widgets/2ef20ba8c7bc546dbfe33f8c0570aebc.html"
               scrolling="no"
@@ -211,7 +202,7 @@ export default function Home() {
         </div>
 
         <div className="instagram-preview">
-          <h3>What You'll Find</h3>
+          <h3>What You&apos;ll Find</h3>
           <div className="preview-grid">
             <div className="preview-item">
               <div className="preview-icon">🎸</div>
