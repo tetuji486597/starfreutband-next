@@ -27,11 +27,19 @@ const playlists = [
 
 export default function Home() {
   useEffect(() => {
-    // Load LightWidget script
-    const script = document.createElement("script");
-    script.src = "https://cdn.lightwidget.com/widgets/lightwidget.js";
-    script.async = true;
-    document.head.appendChild(script);
+    // Load EmbedSocial script
+    const loadEmbedSocialScript = () => {
+      if (document.getElementById("EmbedSocialHashtagScript")) {
+        return; // Script already loaded
+      }
+      const script = document.createElement("script");
+      script.id = "EmbedSocialHashtagScript";
+      script.src = "https://embedsocial.com/cdn/ht.js";
+      script.async = true;
+      document.getElementsByTagName("head")[0].appendChild(script);
+    };
+
+    loadEmbedSocialScript();
 
     const checkFadeInElements = () => {
       document.querySelectorAll(".fade-in").forEach((el) => {
@@ -59,10 +67,6 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", checkFadeInElements);
       window.removeEventListener("resize", checkFadeInElements);
-      // Clean up script if needed
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
     };
   }, []);
 
@@ -187,17 +191,28 @@ export default function Home() {
           behind-the-scenes moments, and live updates!
         </p>
 
-        {/* Instagram Feed Widget */}
+        {/* EmbedSocial Instagram Feed Widget */}
         <div className="instagram-feed-container">
           <h3>Recent Posts</h3>
           <div className="instagram-widget-wrapper">
-            <iframe
-              src="//lightwidget.com/widgets/2ef20ba8c7bc546dbfe33f8c0570aebc.html"
-              scrolling="no"
-              allowTransparency={true}
-              className="lightwidget-widget"
-              style={{ width: "100%", border: 0, overflow: "hidden" }}
-            />
+            <div
+              className="embedsocial-hashtag"
+              data-ref="f79bae9f0ce6e4a853c07f3747bc0ef4a9187bc5"
+            >
+              <a
+                className="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding"
+                href="https://embedsocial.com/social-media-aggregator/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram widget"
+              >
+                <img
+                  src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp"
+                  alt="EmbedSocial"
+                />
+                <div className="es-widget-branding-text">Instagram widget</div>
+              </a>
+            </div>
           </div>
         </div>
 
